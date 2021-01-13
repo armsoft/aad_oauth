@@ -82,7 +82,7 @@ class AadOAuth {
   Future<void> _performAuthorization() async {
     await init();
     //still have refreh token / try to get access token with refresh token
-    if (_token != null) {
+    if (_token != null && _token.refreshToken != null) {
       await _performRefreshAuthFlow();
     } else {
       try {
